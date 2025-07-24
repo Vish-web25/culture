@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>World Festival Explorer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      scroll-behavior: smooth;
+      background: #000;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.5s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      max-width: 700px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .emoji {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+      animation: bounce 2s infinite;
+    }
+
+    .nav-buttons {
+      position: absolute;
+      top: 1rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2rem;
+    }
+
+    button {
+      background: #fff;
+      color: #000;
+      padding: 0.5rem 1.2rem;
+      border: none;
+      border-radius: 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ddd;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating emoji animation */
+    .float-emoji {
+      position: absolute;
+      font-size: 2rem;
+      animation: floatUp 10s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section id="page0">
+    <div class="emoji">🌍🎊</div>
+    <h1>Welcome to World Festival Explorer</h1>
+    <p>Discover colorful festivals celebrated across the globe. Dive into traditions, fun, and culture – all through emojis!</p>
+    <div class="nav-buttons">
+      <span></span>
+      <button onclick="nextPage()">Next ➡️</button>
+    </div>
+  </section>
+
+  <section id="page1">
+    <div class="emoji">🪔🎆</div>
+    <h1>Diwali – Festival of Lights (India)</h1>
+    <p>Diwali is a celebration of light over darkness. Families decorate homes with diyas 🪔, burst firecrackers 🎆, and share sweets. It’s one of the most joyful and colorful festivals in India.</p>
+    <div class="nav-buttons">
+      <button onclick="prevPage()">⬅️ Back</button>
+      <button onclick="nextPage()">Next ➡️</button>
+    </div>
+  </section>
+
+  <section id="page2">
+    <div class="emoji">🎭💃</div>
+    <h1>Rio Carnival (Brazil)</h1>
+    <p>The Rio Carnival is a world-famous party filled with parades, samba dancers 💃, and vibrant costumes 🎭. Streets come alive with energy, music, and non-stop celebration.</p>
+    <div class="nav-buttons">
+      <button onclick="prevPage()">⬅️ Back</button>
+      <button onclick="nextPage()">Next ➡️</button>
+    </div>
+  </section>
+
+  <section id="page3">
+    <div class="emoji">🧧🐉</div>
+    <h1>Chinese New Year (China)</h1>
+    <p>This festival marks the start of the lunar year. People give red envelopes 🧧, watch dragon dances 🐉, and enjoy fireworks. It is a time of family reunion and good fortune.</p>
+    <div class="nav-buttons">
+      <button onclick="prevPage()">⬅️ Back</button>
+      <button onclick="nextPage()">Next ➡️</button>
+    </div>
+  </section>
+
+  <section id="page4">
+    <div class="emoji">🖼️📸</div>
+    <h1>Gallery of Colors</h1>
+    <p>Each festival shines in its own unique way. From glowing lanterns to dazzling parades, festivals bring people together through joy and expression. 🌈</p>
+    <div class="nav-buttons">
+      <button onclick="prevPage()">⬅️ Back</button>
+      <button onclick="nextPage()">Next ➡️</button>
+    </div>
+  </section>
+
+  <section id="page5">
+    <div class="emoji">📬😊</div>
+    <h1>Contact Us</h1>
+    <p>Have a favorite festival to share? We'd love to hear from you! Drop your thoughts, stories, or questions anytime. 🎉</p>
+    <div class="nav-buttons">
+      <button onclick="prevPage()">⬅️ Back</button>
+      <button onclick="nextPage()">Next ➡️</button>
+    </div>
+  </section>
+
+  <section id="page6">
+    <div class="emoji">🙌💖</div>
+    <h1>Thanks for Visiting!</h1>
+    <p>Made with culture  
+    <br><br>👨‍💻 Made by: <strong>Vishwaraj Jadhav</strong></p>
+
+    <!-- Floating emojis -->
+    <span class="float-emoji" style="left:10%;">🎉</span>
+    <span class="float-emoji" style="left:25%;">🎊</span>
+    <span class="float-emoji" style="left:40%;">🪔</span>
+    <span class="float-emoji" style="left:55%;">🧧</span>
+    <span class="float-emoji" style="left:70%;">💃</span>
+    <span class="float-emoji" style="left:85%;">🐉</span>
+
+    <div class="nav-buttons">
+      <button onclick="prevPage()">⬅️ Back</button>
+      <span></span>
+    </div>
+  </section>
+
+  <script>
+    let currentPage = 0;
+    const totalPages = 6;
+
+    function showPage(index) {
+      document.querySelectorAll("section").forEach((sec, i) => {
+        sec.style.display = i === index ? "flex" : "none";
+      });
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 0) {
+        currentPage--;
+        showPage(currentPage);
+      }
+    }
+
+    // Initial display
+    showPage(currentPage);
+  </script>
+
+</body>
+</html>
